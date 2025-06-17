@@ -1,0 +1,3 @@
+Deleted file : 2025-06-17 23:09:17.658959 - C:\Users\shail\python\Assignments\Assignment_20\Demo\LogFile1 - Copy.doc
+Deleted file : 2025-06-17 23:09:17.658959 - C:\Users\shail\python\Assignments\Assignment_20\Demo\LogFile2 - Copy.doc
+Deleted file : 2025-06-17 23:09:17.658959 - C:\Users\shail\python\Assignments\Assignment_20\Demo\LogFile3 - Copy.doc
