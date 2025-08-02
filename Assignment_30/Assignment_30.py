@@ -44,19 +44,15 @@ def MarvellousBankRandomForestClassifier(datapath):
     plt.title("Class Distribution")
     plt.show()
 
-    # Identify categorical columns (excluding target 'y')
     cat_cols = df.select_dtypes(include="object").drop(columns=["y"]).columns.tolist()
 
-    # Apply One-Hot Encoding
     encoder = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
     encoded_array = encoder.fit_transform(df[cat_cols])
 
-    # Convert to DataFrame
     encoded_df = pandas.DataFrame(
         encoded_array, columns=encoder.get_feature_names_out(cat_cols)
     )
 
-    # Concatenate with original DataFrame
     df = pandas.concat([df.drop(columns=cat_cols), encoded_df], axis=1)
 
     print(Line)
@@ -65,13 +61,11 @@ def MarvellousBankRandomForestClassifier(datapath):
     print("Dimension of dataset is: ", df.shape)
     print(Line)
 
-    # Identify numeric columns (excluding target 'y')
     numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
     (
         numeric_cols.remove("duration") if "duration" in numeric_cols else None
-    )  # Optional: exclude if it's target
+    ) 
 
-    # Scale numeric features
     scaler = StandardScaler()
     df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
 
@@ -134,8 +128,8 @@ def MarvellousBankRandomForestClassifier(datapath):
     plt.figure(figsize=(6, 4))
     plt.plot(fpr, tpr, label=f"AUC = {rocaucreport:.2f}")
     plt.plot([0, 1], [0, 1], linestyle="--", color="gray")
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
+    plt.xlabel("False")
+    plt.ylabel("True")
     plt.title("ROC Curve")
     plt.legend()
     plt.show()
@@ -147,3 +141,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
