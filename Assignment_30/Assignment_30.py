@@ -63,7 +63,7 @@ def MarvellousBankRandomForestClassifier(datapath):
 
     numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
     (
-        numeric_cols.remove("duration") if "duration" in numeric_cols else None
+        numeric_cols.remove("y") if "y" in numeric_cols else None
     ) 
 
     scaler = StandardScaler()
@@ -141,4 +141,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
