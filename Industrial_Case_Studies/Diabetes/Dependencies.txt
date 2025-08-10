@@ -1,0 +1,6 @@
+The project requires the following Python packages:
+- `numpy`
+- `pandas`
+- `matplotlib`
+- `sklearn`
+- `pickle`
